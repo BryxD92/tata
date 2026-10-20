@@ -1,6 +1,6 @@
 # Tata — pagina della bozza (GitHub Pages)
 
-Un indirizzo stabile per chi prova Tata. L’installer Windows e il DMG Mac stanno sulle **GitHub Releases**. Niente link Dropbox.
+Un indirizzo stabile per chi prova Tata. Per ora il download è solo il DMG per Mac, sulle **GitHub Releases**. Niente link Dropbox.
 
 ## File
 
@@ -15,7 +15,7 @@ tata-mark.svg
 
 ## Una volta sola
 
-1. Repo pubblico `tata` sull’account GitHub (qui non va il codice del programma, solo questa pagina e, sulle Releases, gli installer).
+1. Repo pubblico `tata` sull’account GitHub (qui non va il codice del programma, solo questa pagina e, sulle Releases, il DMG).
 2. Push di questa cartella sul branch `main`.
 3. GitHub → **Settings → Pages**:
    - Source: **Deploy from a branch**
@@ -26,15 +26,15 @@ tata-mark.svg
 
 ## A ogni nuova versione
 
-1. Prepara l’installer Windows e, se c’è, il DMG Mac (Apple Silicon).
+1. Prepara il DMG per Mac (Apple Silicon).
 2. GitHub → **Releases → Draft a new release**
    - Tag: `v0.1.0`
    - Titolo: `Tata 0.1.0`
-   - Allega i file
+   - Allega il DMG
 3. Aggiorna `releases.json`:
    - Sposta il `latest` attuale in `history` (note corte)
    - Nuovo `latest` con `version`, `tag`, `releasedAt`, `notes`
-   - Sotto `windows` e `mac`: `version`, `tag`, `file`, `sizeMb`, `url` (e `arch` per il Mac)
+   - Sotto `mac`: `version`, `tag`, `file`, `sizeMb`, `url`, `arch`
    - Se `url` è vuoto, la pagina lo costruisce da owner / repo / tag / file
 4. Commit e push di `releases.json`.
 5. Nel messaggio privato: «C’è un aggiornamento sulla pagina solita» e l’indirizzo.

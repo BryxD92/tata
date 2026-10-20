@@ -1,16 +1,6 @@
 (function () {
   const $ = (id) => document.getElementById(id);
 
-  function releaseDownloadUrl(data, latest) {
-    if (latest.url && String(latest.url).trim()) return latest.url.trim();
-    const owner = data.github && data.github.owner;
-    const repo = data.github && data.github.repo;
-    const tag = latest.tag || (`v${latest.version}`);
-    const file = latest.file;
-    if (!owner || owner === "YOUR_GITHUB_USERNAME" || !repo || !file) return "";
-    return `https://github.com/${owner}/${repo}/releases/download/${encodeURIComponent(tag)}/${encodeURIComponent(file)}`;
-  }
-
   function platformDownloadUrl(data, latest, platform) {
     const plat = latest && latest[platform];
     if (plat && plat.url && String(plat.url).trim()) return plat.url.trim();
@@ -22,7 +12,6 @@
         return `https://github.com/${owner}/${repo}/releases/download/${encodeURIComponent(tag)}/${encodeURIComponent(plat.file)}`;
       }
     }
-    if (platform === "windows") return releaseDownloadUrl(data, latest);
     return "";
   }
 
@@ -49,10 +38,8 @@
     }
   }
 
-  function setDownloadButtons(winUrl, macUrl) {
-    wireButton($("btnDownload"), winUrl);
+  function setDownloadButtons(macUrl) {
     wireButton($("btnDownloadMacHero"), macUrl);
-    wireButton($("btnDownloadMain"), winUrl);
     wireButton($("btnDownloadMac"), macUrl);
   }
 
@@ -62,37 +49,23 @@
 
   function render(data) {
     const latest = data.latest || {};
-    const win = latest.windows || {};
     const mac = latest.mac || {};
-    const winUrl = platformDownloadUrl(data, latest, "windows");
     const macUrl = platformDownloadUrl(data, latest, "mac");
-    const winReady = platformReady(win, winUrl) || Boolean(latest.file || latest.url);
     const macReady = platformReady(mac, macUrl);
 
-    const winVer = win.version || (winReady ? latest.version : "") || "";
     const macVer = mac.version || "";
-    const winMb = win.sizeMb != null ? win.sizeMb : latest.sizeMb;
     const macMb = mac.sizeMb != null ? mac.sizeMb : null;
     const archNote = mac.arch ? ` · ${mac.arch}` : "";
 
     const metaBits = [];
-    if (winReady && winVer) metaBits.push(`Windows ${winVer}${winMb != null ? ` · ~${winMb} MB` : ""}`);
     if (macReady && macVer) metaBits.push(`Mac ${macVer}${archNote}${macMb != null ? ` · ~${macMb} MB` : ""}`);
     $("heroMeta").textContent = metaBits.length
       ? `Ultima versione · ${metaBits.join(" · ")}`
-      : "La prima versione scaricabile arriva presto";
+      : "Il primo DMG per Mac arriva presto";
 
-    $("dlVersion").textContent = latest.version || winVer || "—";
+    $("dlVersion").textContent = mac.version || latest.version || "—";
 
     const fileLines = [];
-    if (winReady && (win.file || latest.file)) {
-      fileLines.push(
-        `Windows: ${win.file || latest.file}` +
-          (win.releasedAt || latest.releasedAt
-            ? " · " + formatDate(win.releasedAt || latest.releasedAt)
-            : "")
-      );
-    }
     if (macReady && mac.file) {
       fileLines.push(
         `Mac${archNote}: ${mac.file}` +
@@ -103,16 +76,16 @@
     }
     $("dlFile").textContent = fileLines.length
       ? fileLines.join("\n")
-      : "Quando la prima Release è su GitHub, qui compaiono installer e DMG.";
-    $("dlFile").style.whiteSpace = fileLines.length > 1 ? "pre-line" : "";
+      : "Quando la prima Release è su GitHub, qui compare il DMG per Mac.";
+    $("dlFile").style.whiteSpace = "";
 
     const hint = $("dlHint");
-    if (!winUrl && !macUrl) {
-      hint.textContent = "Il download non è ancora pronto. Alla prima Release, aggiorna releases.json con file, tag e versione: i pulsanti si accendono da soli.";
+    if (!macUrl) {
+      hint.textContent = "Il download non è ancora pronto. Alla prima Release arriva il DMG per Mac (Apple Silicon): aggiorna releases.json con file, tag e versione, e il pulsante si accende da solo.";
     } else {
-      hint.textContent = "Installa sopra la versione precedente: i dati restano su quel computer. La build Mac, per ora, è solo Apple Silicon (arm64).";
+      hint.textContent = "Installa sopra la versione precedente: i dati restano su quel computer. La build, per ora, è solo Apple Silicon (arm64).";
     }
-    setDownloadButtons(winUrl, macUrl);
+    setDownloadButtons(macUrl);
 
     const notesHost = $("latestNotes");
     notesHost.innerHTML = "";
@@ -188,6 +161,6 @@
       if (notesHost) {
         notesHost.innerHTML = '<p class="section-lede">Note non caricate: controlla che releases.json sia completo e sia JSON valido.</p>';
       }
-      setDownloadButtons("", "");
+      setDownloadButtons("");
     });
 })();

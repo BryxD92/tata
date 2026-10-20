@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tata — Quaderno della tata · Bozza</title>
-  <meta name="description" content="Bozza di Tata, il quaderno per chi tiene i bambini. Famiglie, ore, giornate, spese e fattura con QR svizzero. Windows e Mac." />
+  <meta name="description" content="Bozza di Tata, il quaderno per chi tiene i bambini. Famiglie, ore, giornate, spese e fattura con QR svizzero. Per ora solo su Mac." />
   <meta name="robots" content="noindex, nofollow" />
   <!-- GitHub project Pages: https://USER.github.io/tata/ -->
   <base href="/tata/" />
@@ -36,10 +36,9 @@
       <div class="hero-copy">
         <p class="eyebrow">Il quaderno di chi sta con i bambini</p>
         <h1>Il conto della settimana, prima che finisca il mese.</h1>
-        <p class="lede">Bozza per chi tiene i bambini. Famiglie, ore, giornate, spese e fattura con QR svizzero, nello stesso quaderno. Windows e Mac.</p>
+        <p class="lede">Bozza per chi tiene i bambini. Famiglie, ore, giornate, spese e fattura con QR svizzero, nello stesso quaderno. Per ora solo su Mac.</p>
         <div class="cta-row">
-          <a class="btn primary" id="btnDownload" href="#download">Scarica per Windows</a>
-          <a class="btn primary soft" id="btnDownloadMacHero" href="#download">Scarica per Mac</a>
+          <a class="btn primary" id="btnDownloadMacHero" href="#download">Scarica per Mac</a>
           <a class="btn ghost" href="#start">Come si apre</a>
         </div>
         <p class="hero-meta" id="heroMeta">Carico l’ultima versione…</p>
@@ -89,41 +88,7 @@
     <section class="section alt" id="download">
       <div class="section-inner">
         <h2>Download</h2>
-        <p class="section-lede">Installer per Windows o DMG per Mac. Installare sopra la versione precedente tiene i dati su quel computer.</p>
-
-        <aside class="security-banner" id="windowsSecurity" role="note" aria-labelledby="securityBannerTitle">
-          <div class="security-banner-head">
-            <span class="security-banner-icon" aria-hidden="true">!</span>
-            <div>
-              <p class="security-banner-kicker">Importante</p>
-              <h3 class="security-banner-title" id="securityBannerTitle">Windows può dire «virus»: è un falso positivo</h3>
-            </div>
-          </div>
-          <div class="security-banner-body">
-            <p>
-              L’installer della bozza di Tata <strong>non è ancora firmato</strong> (il certificato costa; arriva dopo).
-              Windows Defender / SmartScreen può mostrare «minaccia rilevata», Trojan, <em>Wacatac</em>, o «Windows ha protetto il PC».
-              <strong>Non è malware</strong>: è un falso positivo sugli EXE non firmati di una bozza. Tata è sicuro.
-            </p>
-            <ol class="security-steps">
-              <li>
-                <strong>SmartScreen</strong> («Windows ha protetto il PC»):
-                clicca <em>Ulteriori informazioni</em> → poi <em>Esegui comunque</em>.
-              </li>
-              <li>
-                <strong>Quarantena di Defender</strong>: apri Sicurezza di Windows →
-                <em>Cronologia protezione</em> → seleziona il file di Tata →
-                <em>Consenti sul dispositivo</em> (oppure Ripristina).
-              </li>
-            </ol>
-            <p class="security-banner-foot">
-              Non spegnere Windows Defender per sempre. Consenti solo questo installer di Tata.
-            </p>
-          </div>
-          <p class="security-banner-why">
-            Perché non è firmato? È una bozza: la firma Authenticode arriva quando compriamo il certificato.
-          </p>
-        </aside>
+        <p class="section-lede">DMG per Mac. Installare sopra la versione precedente tiene i dati su quel computer.</p>
 
         <aside class="security-banner" id="macSecurity" role="note" aria-labelledby="macSecurityBannerTitle">
           <div class="security-banner-head">
@@ -169,14 +134,14 @@
               <p class="dl-file" id="dlFile">—</p>
             </div>
             <div class="dl-actions">
-              <a class="btn primary" id="btnDownloadMain" href="#download">Scarica per Windows</a>
-              <a class="btn primary soft" id="btnDownloadMac" href="#download">Scarica per Mac</a>
+              <a class="btn primary" id="btnDownloadMac" href="#download">Scarica per Mac</a>
             </div>
           </div>
           <p class="dl-hint" id="dlHint"></p>
           <p class="dl-security-reminder">
-            Dopo il download: Windows → <strong>Ulteriori informazioni → Esegui comunque</strong>;
-            Mac → <strong>tasto destro → Apri</strong> (vedi i riquadri ambra qui sopra).
+            Dopo il download: <strong>tasto destro sull’app → Apri</strong>.
+            Se macOS la blocca ancora, nel Terminale: <code>xattr -cr "/Applications/Tata.app"</code>
+            (vedi il riquadro ambra qui sopra).
           </p>
         </div>
         <div class="history" id="history"></div>
@@ -192,7 +157,7 @@
             <span class="step-num" aria-hidden="true">1</span>
             <div class="step-body">
               <strong>Installa</strong>
-              <p>Scarica Windows o Mac da questa pagina. Se Windows avvisa, segui il riquadro ambra: Ulteriori informazioni → Esegui comunque. Sul Mac: tasto destro sull’app → Apri.</p>
+              <p>Scarica il DMG per Mac da questa pagina e trascina Tata in Applicazioni. Se macOS blocca l’app: tasto destro sull’app → Apri. Se serve, nel Terminale: xattr -cr "/Applications/Tata.app".</p>
             </div>
           </li>
           <li>
