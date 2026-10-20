@@ -29,11 +29,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  scroll-padding-top: 112px;
 }
 
 .section,
-#top { scroll-margin-top: 84px; }
+#top { scroll-margin-top: 112px; }
 
 body {
   margin: 0;
@@ -90,9 +90,10 @@ a { color: inherit; }
 }
 
 .brand img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  display: block;
+  height: 68px;
+  width: auto;
+  object-fit: contain;
 }
 
 .top-nav {
