@@ -7,17 +7,28 @@
   },
   "latest": {
     "version": "0.1.0",
+    "tag": "v0.1.0",
     "releasedAt": "2026-10-20",
     "notes": [
-      "Bozza 0.1.0. Il programma c’è: il primo download sarà un DMG per Mac (Apple Silicon).",
+      "Bozza 0.1.0. Il download è il DMG per Mac (Apple Silicon). Non è firmato: se macOS avvisa, i passi sono in «Come si apre».",
       "Quadro della settimana: i bambini a sinistra, i giorni in colonna. Il piano è tratteggiato, la presenza segnata è piena, e accanto c’è il conto aperto di ogni famiglia.",
       "Anno: i dodici mesi, con chi c’è e dove. Si aggiungono eventi (pediatra, parco, compleanno) e un avviso, dentro l’app e come notifica del computer.",
       "Famiglie: genitori, contatti, tariffa oraria e tariffa a giornata, bambini con note.",
-      "Presenze a ore, con orario, oppure a giornata intera.",
+      "Presenze si apre sulla lista dei bambini. Un clic raggruppa i dati di quel bambino. Segna presenza può coprire più date, e i giorni segnati restano sul calendario.",
+      "Nel piano dei giorni: giornata intera, oppure ripeti lo stesso piano su tutte le settimane.",
       "Fattura A4 per una famiglia e un periodo. Conta solo ciò che non è già stato fatturato. In fondo c’è il QR svizzero con importo, IBAN e numero fattura.",
       "Spese per bambino o generali. Quelle da rimborsare possono entrare in fattura; quelle generali no.",
       "I dati restano su quel computer. Gli importi sono in franchi svizzeri. La prima apertura mostra le famiglie di esempio Bianchi, Ferri e Greco."
-    ]
+    ],
+    "mac": {
+      "version": "0.1.0",
+      "tag": "v0.1.0",
+      "file": "Tata-0.1.0-arm64.dmg",
+      "arch": "Apple Silicon (arm64)",
+      "sizeMb": 268,
+      "releasedAt": "2026-10-20",
+      "url": "https://github.com/BryxD92/tata/releases/download/v0.1.0/Tata-0.1.0-arm64.dmg"
+    }
   },
   "history": []
 }
