@@ -1,6 +1,6 @@
 # Tata — pagina della bozza (GitHub Pages)
 
-Un indirizzo stabile per chi prova Tata. Per ora il download è solo il DMG per Mac, sulle **GitHub Releases**. Niente link Dropbox.
+Un indirizzo stabile per chi prova Tata. Per ora il download è solo il DMG per Mac, sulle **GitHub Releases**.
 
 ## File
 
