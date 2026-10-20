@@ -39,10 +39,7 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--ink);
-  background:
-    radial-gradient(900px 520px at 8% -10%, rgba(231, 183, 174, 0.45), transparent 60%),
-    radial-gradient(800px 480px at 100% 8%, rgba(158, 184, 201, 0.35), transparent 55%),
-    linear-gradient(180deg, #fbf6ef 0%, var(--bg) 40%, #f3e4d4 100%);
+  background: linear-gradient(180deg, #fbf6ef 0%, var(--bg) 40%, #f3e4d4 100%);
   min-height: 100vh;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -59,6 +56,33 @@ body {
 
 a { color: inherit; }
 
+.quiet-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  width: min(1120px, calc(100% - 40px));
+  margin: 22px auto 0;
+  padding: 0 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  position: static;
+}
+
+.quiet-nav a {
+  color: #3c332c;
+  text-decoration: none;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.quiet-nav a:hover {
+  text-decoration: underline;
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -66,33 +90,9 @@ a { color: inherit; }
   gap: 36px;
   align-items: center;
   width: min(1120px, calc(100% - 40px));
-  margin: 28px auto 10px;
-  padding: 42px 18px 28px;
+  margin: 8px auto 10px;
+  padding: 8px 18px 28px;
   overflow: hidden;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(2px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.blob-a {
-  width: 280px;
-  height: 280px;
-  left: -40px;
-  top: 20px;
-  background: rgba(231, 183, 174, 0.45);
-}
-
-.blob-b {
-  width: 220px;
-  height: 220px;
-  right: 8%;
-  bottom: -30px;
-  background: rgba(158, 184, 201, 0.35);
 }
 
 .hero-copy,
@@ -100,7 +100,7 @@ a { color: inherit; }
 
 .hero-logo {
   display: inline-block;
-  margin: 0 0 4px;
+  margin: 0 0 34px;
   line-height: 0;
   text-decoration: none;
 }
@@ -129,24 +129,6 @@ a { color: inherit; }
   color: #5c4638;
   max-width: 22ch;
   text-wrap: balance;
-}
-
-.quiet-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
-  margin: 0 0 22px;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.quiet-nav a {
-  color: var(--sage-deep);
-  text-decoration: none;
-}
-
-.quiet-nav a:hover {
-  text-decoration: underline;
 }
 
 .home-link {
@@ -668,10 +650,13 @@ a { color: inherit; }
 }
 
 @media (max-width: 860px) {
+  .quiet-nav,
+  .hero {
+    width: min(1120px, calc(100% - 20px));
+  }
   .hero {
     grid-template-columns: 1fr;
-    width: min(1120px, calc(100% - 20px));
-    padding-top: 28px;
+    padding-top: 8px;
     gap: 22px;
   }
   .hero-logo img { height: 148px; }
