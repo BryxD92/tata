@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tata — Quaderno della tata · Bozza</title>
+  <meta name="description" content="Bozza di Tata, il quaderno per chi tiene i bambini. Famiglie, ore, giornate, spese e fattura con QR svizzero. Windows e Mac." />
+  <meta name="robots" content="noindex, nofollow" />
+  <!-- GitHub project Pages: https://USER.github.io/tata/ -->
+  <base href="/tata/" />
+  <link rel="icon" href="tata-mark.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="brand" href="#top" aria-label="Tata, inizio">
+      <img src="tata-mark.svg" alt="" width="36" height="36" />
+      <span>TATA<span class="dot">.</span></span>
+    </a>
+    <nav class="top-nav">
+      <a href="#updates">Novità</a>
+      <a href="#download">Download</a>
+      <a href="#start">Come si apre</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Tata, bozza">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-board">
+          <p class="board-kicker">Quadro · 19–25 ottobre</p>
+          <div class="board-head">
+            <span>Bambino</span>
+            <span>Lun</span>
+            <span>Mar</span>
+            <span>Mer</span>
+            <span>Gio</span>
+          </div>
+          <div class="board-row">
+            <span class="board-name">Emma</span>
+            <span class="pill solid">15–18.30</span>
+            <span class="pill ghost">+ segna</span>
+            <span class="pill dash">Piano 15–19</span>
+            <span class="pill ghost">+ segna</span>
+          </div>
+          <div class="board-row">
+            <span class="board-name">Leo</span>
+            <span class="pill solid blue">16.30–18.30</span>
+            <span class="pill ghost">+ segna</span>
+            <span class="pill dash blue">Piano 16.30–19</span>
+            <span class="pill ghost">+ segna</span>
+          </div>
+          <div class="board-row">
+            <span class="board-name">Sofia</span>
+            <span class="pill ghost">+ segna</span>
+            <span class="pill solid rose">Giornata</span>
+            <span class="pill ghost">+ segna</span>
+            <span class="pill dash rose">Piano giornata</span>
+          </div>
+          <p class="board-foot">Da fatturare CHF 1'304.90 · QR svizzero in fattura</p>
+        </div>
+        <div class="hero-wash"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="brand-lockup">TATA<span>.</span></p>
+        <h1>Il conto della settimana, prima che finisca il mese.</h1>
+        <p class="lede">Bozza per chi tiene i bambini. Famiglie, ore, giornate, spese e fattura con QR svizzero, nello stesso quaderno. Windows e Mac.</p>
+        <div class="cta-row">
+          <a class="btn primary" id="btnDownload" href="#download">Scarica per Windows</a>
+          <a class="btn primary" id="btnDownloadMacHero" href="#download">Scarica per Mac</a>
+          <a class="btn ghost" href="#start">Come si apre</a>
+        </div>
+        <p class="hero-meta" id="heroMeta">Carico l’ultima versione…</p>
+      </div>
+    </section>
+
+    <section class="section" id="updates">
+      <div class="section-inner">
+        <h2>Novità</h2>
+        <p class="section-lede">Un solo indirizzo per ogni versione di prova. Niente link Dropbox da inseguire.</p>
+        <div id="latestNotes" class="notes"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="download">
+      <div class="section-inner">
+        <h2>Download</h2>
+        <p class="section-lede">Installer per Windows o DMG per Mac. Installare sopra la versione precedente tiene i dati su quel computer.</p>
+
+        <aside class="security-banner" id="windowsSecurity" role="note" aria-labelledby="securityBannerTitle">
+          <div class="security-banner-head">
+            <span class="security-banner-icon" aria-hidden="true">!</span>
+            <div>
+              <p class="security-banner-kicker">Importante</p>
+              <h3 class="security-banner-title" id="securityBannerTitle">Windows può dire «virus»: è un falso positivo</h3>
+            </div>
+          </div>
+          <div class="security-banner-body">
+            <p>
+              L’installer della bozza di Tata <strong>non è ancora firmato</strong> (il certificato costa; arriva dopo).
+              Windows Defender / SmartScreen può mostrare «minaccia rilevata», Trojan, <em>Wacatac</em>, o «Windows ha protetto il PC».
+              <strong>Non è malware</strong>: è un falso positivo sugli EXE non firmati di una bozza. Tata è sicuro.
+            </p>
+            <ol class="security-steps">
+              <li>
+                <strong>SmartScreen</strong> («Windows ha protetto il PC»):
+                clicca <em>Ulteriori informazioni</em> → poi <em>Esegui comunque</em>.
+              </li>
+              <li>
+                <strong>Quarantena di Defender</strong>: apri Sicurezza di Windows →
+                <em>Cronologia protezione</em> → seleziona il file di Tata →
+                <em>Consenti sul dispositivo</em> (oppure Ripristina).
+              </li>
+            </ol>
+            <p class="security-banner-foot">
+              Non spegnere Windows Defender per sempre. Consenti solo questo installer di Tata.
+            </p>
+          </div>
+          <p class="security-banner-why">
+            Perché non è firmato? È una bozza: la firma Authenticode arriva quando compriamo il certificato.
+          </p>
+        </aside>
+
+        <aside class="security-banner" id="macSecurity" role="note" aria-labelledby="macSecurityBannerTitle">
+          <div class="security-banner-head">
+            <span class="security-banner-icon" aria-hidden="true">!</span>
+            <div>
+              <p class="security-banner-kicker">Importante · Mac</p>
+              <h3 class="security-banner-title" id="macSecurityBannerTitle">Gatekeeper può bloccare l’app: bozza non firmata</h3>
+            </div>
+          </div>
+          <div class="security-banner-body">
+            <p>
+              La build Mac <strong>non è ancora notarizzata né firmata con Developer ID</strong>.
+              macOS può dire che l’app è <strong>«danneggiata e non può essere aperta»</strong> o
+              «da uno sviluppatore non identificato».
+              <strong>È Gatekeeper su una bozza non firmata: il download non è corrotto.</strong>
+            </p>
+            <ol class="security-steps">
+              <li>
+                Trascina Tata in Applicazioni, poi nel Terminale esegui:
+                <code>xattr -cr "/Applications/Tata.app"</code>
+                e riapri l’app.
+              </li>
+              <li>
+                Oppure nel Finder: <strong>tasto destro</strong> sull’app →
+                <em>Apri</em> → conferma <em>Apri</em>.
+              </li>
+              <li>
+                Oppure: Impostazioni di Sistema → Privacy e sicurezza →
+                <em>Apri comunque</em>.
+              </li>
+            </ol>
+            <p class="security-banner-foot">
+              Il DMG per Mac, per ora, è <strong>solo Apple Silicon (arm64)</strong>. I Mac Intel arrivano dopo, con una build a parte.
+            </p>
+          </div>
+        </aside>
+
+        <div class="download-panel" id="downloadPanel" role="region" aria-label="Ultima versione">
+          <div class="dl-main">
+            <div>
+              <p class="dl-label">Ultima versione</p>
+              <p class="dl-version" id="dlVersion">—</p>
+              <p class="dl-file" id="dlFile">—</p>
+            </div>
+            <div class="dl-actions">
+              <a class="btn primary" id="btnDownloadMain" href="#download">Scarica per Windows</a>
+              <a class="btn primary" id="btnDownloadMac" href="#download">Scarica per Mac</a>
+            </div>
+          </div>
+          <p class="dl-hint" id="dlHint"></p>
+          <p class="dl-security-reminder">
+            Dopo il download: Windows → <strong>Ulteriori informazioni → Esegui comunque</strong>;
+            Mac → <strong>tasto destro → Apri</strong> (vedi i riquadri ambra qui sopra).
+          </p>
+        </div>
+        <div class="history" id="history"></div>
+      </div>
+    </section>
+
+    <section class="section" id="start">
+      <div class="section-inner">
+        <h2>Si apre in tre passi</h2>
+        <p class="section-lede">Niente account e niente chiave. Il quaderno vive su quel computer.</p>
+        <ol class="steps">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <strong>Installa</strong>
+              <p>Scarica Windows o Mac da questa pagina. Se Windows avvisa, segui il riquadro ambra: Ulteriori informazioni → Esegui comunque. Sul Mac: tasto destro sull’app → Apri.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <strong>Apri</strong>
+              <p>Si apre la finestra Tata. La prima volta trovi i dati di esempio: famiglie Bianchi, Ferri e Greco, a Lugano. Chiudi la finestra per spegnere anche il programma.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <strong>Metti i tuoi dati</strong>
+              <p>Nome, famiglie, tariffe orarie e a giornata, poi l’IBAN per il QR. Dalle Impostazioni puoi svuotare gli esempi o scaricare una copia. Per consegnare una fattura: aprila e usa Stampa o salva PDF.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="expiry" id="expiryLine"></p>
+      </div>
+    </section>
+
+    <section class="section alt" id="feedback">
+      <div class="section-inner narrow">
+        <h2>Note</h2>
+        <p class="section-lede">Dimmi se il conto torna, cosa si rompe, e cosa ti serve ogni giorno.</p>
+        <p class="feedback-line">Scrivi nello stesso messaggio privato con cui hai ricevuto questo indirizzo.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <span class="brand-mini">TATA<span>.</span></span>
+      <span>Bozza · i dati restano sul computer</span>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

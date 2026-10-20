@@ -1,0 +1,23 @@
+{
+  "product": "Tata",
+  "channel": "bozza",
+  "github": {
+    "owner": "BryxD92",
+    "repo": "tata"
+  },
+  "latest": {
+    "version": "0.1.0",
+    "releasedAt": "2026-10-20",
+    "notes": [
+      "Bozza 0.1.0. Il programma c’è: l’installer Windows e il DMG per Mac arrivano sulla prima Release di questo sito.",
+      "Quadro della settimana: i bambini a sinistra, i giorni in colonna. Il piano è tratteggiato, la presenza segnata è piena, e accanto c’è il conto aperto di ogni famiglia.",
+      "Anno: i dodici mesi, con chi c’è e dove. Si aggiungono eventi (pediatra, parco, compleanno) e un avviso, dentro l’app e come notifica del computer.",
+      "Famiglie: genitori, contatti, tariffa oraria e tariffa a giornata, bambini con note.",
+      "Presenze a ore, con orario, oppure a giornata intera.",
+      "Fattura A4 per una famiglia e un periodo. Conta solo ciò che non è già stato fatturato. In fondo c’è il QR svizzero con importo, IBAN e numero fattura.",
+      "Spese per bambino o generali. Quelle da rimborsare possono entrare in fattura; quelle generali no.",
+      "I dati restano su quel computer. Gli importi sono in franchi svizzeri. La prima apertura mostra le famiglie di esempio Bianchi, Ferri e Greco."
+    ]
+  },
+  "history": []
+}
